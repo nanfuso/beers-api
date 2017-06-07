@@ -1,4 +1,4 @@
-class BeersController < ApplicationController
+class Api::V2::BeersController < ApplicationController
     def index
         @beers = Beer.all
     end
@@ -31,6 +31,12 @@ class BeersController < ApplicationController
 
         render :show
 
+    end
+
+    def destroy
+        @beer = Beer.find(params[:id])
+        @beer.destroy
+        render json: {message: 'Employee Destroyed'}, status: 422
     end
 
 end
