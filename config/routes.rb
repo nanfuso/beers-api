@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '/' => 'beers#index'
+  get '/beers' => 'beers#index'
+  post '/beers' => 'beers#create'
+  
     namespace :api do
 
         namespace  :v1 do

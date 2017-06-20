@@ -1,0 +1,17 @@
+<h1>Beers</h1>
+
+<div id="app">
+<h2>Add a New Beer!</h2>
+    Name : <input type="text" v-model="newBeerName">
+    Style : <input type="text" v-model="newBeerStyle">
+    Yeast : <input type="text" v-model="newBeerYeast">
+    IBU : <input type="text" v-model="newBeerIBU">
+
+    <div v-for="beer in beers">
+        <h2 >{{ beer.name }}</h2>
+        <p >{{ beer.style }}</p>
+        <p >{{ beer.yeast }}</p>
+        <p >{{ beer.ibu }}</p>
+    </div>
+
+</div>
