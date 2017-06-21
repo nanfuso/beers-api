@@ -1,17 +1,22 @@
-<h1>Beers</h1>
-
 <div id="app">
+<h1>Beers</h1>
+<ul>
+    <li v-for= "error in errors">{{ error}}</li>
+</ul>
+
 <h2>Add a New Beer!</h2>
     Name : <input type="text" v-model="newBeerName">
     Style : <input type="text" v-model="newBeerStyle">
     Yeast : <input type="text" v-model="newBeerYeast">
     IBU : <input type="text" v-model="newBeerIBU">
+    <button v-on:click="addBeer()"> Add New Beer</button>
 
     <div v-for="beer in beers">
-        <h2 >{{ beer.name }}</h2>
-        <p >{{ beer.style }}</p>
-        <p >{{ beer.yeast }}</p>
-        <p >{{ beer.ibu }}</p>
+        <h2 v-on:click="toggleDetails(beer)">{{ beer.name }}</h2>
+        <p v-if="beer.detailsVisible">Style: {{ beer.style }}</p>
+<!--         <p v-if="beer.detailsVisible">Yeast: {{ beer.yeast }}</p> -->
+        <p v-if="beer.detailsVisible">IBU: {{ beer.ibu }}</p>
+        <button v-if="beer.detailsVisible" v-on:click="deleteBeer(beer)">Delete</button>
     </div>
 
 </div>

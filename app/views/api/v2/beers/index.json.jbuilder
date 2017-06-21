@@ -3,4 +3,5 @@ json.array! @beers.each do |beer|
     json.style beer.style
     json.style beer.yeast
     json.ibu beer.ibu
+    json.detailsVisible false
 end
